@@ -4,27 +4,40 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ejercicio1
+namespace Ejercicio5
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int numero;
-            int a, b;
-            int suma = 0;
+            int numero; int mayor = 0; int digito1 = 0; int digito2 = 0; int digito3=0;
 
 
-            Console.Write("Introduzca numero de dos digitos:");
+            Console.WriteLine("Introduzca un numero de tres digitos:");
             numero = Convert.ToInt32(Console.ReadLine());
 
+            digito1 = numero / 100;
+            digito2 = (numero / 10)%10;
+            digito3 = numero % 10;
 
-            a = numero % 10;
-            b = numero / 10;
-            suma = a + b;
+            if(digito1 > digito2)
+                if(digito1>digito3)
+                    Console.WriteLine("{0} el digito mayor es:", digito1);
+                else if (digito3>digito2)
+                    Console.WriteLine("{0} el digito mayor es:", digito3);
+                else
+                    Console.WriteLine("{0} el digito mayor es:", digito2);
+            else if (digito2 > digito3)
+                Console.WriteLine("{0} el digito mayor es:", digito2);
+            else
+                Console.WriteLine("{0} el digito mayor es:", digito3);
+           
 
-            Console.WriteLine(suma);
             Console.ReadKey();
+
+
+
+
 
 
         }
